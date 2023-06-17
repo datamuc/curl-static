@@ -6,6 +6,8 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: alpine:latest
+      env:
+        ARCH: amd64
     steps:
     - name: get code
       uses: actions/checkout@v3
