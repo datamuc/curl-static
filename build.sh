@@ -1,6 +1,5 @@
 #!/bin/sh
 
-cd /tmp
 # to test locally, run one of:
 # docker run --rm -v $(pwd):/tmp -w /tmp -e ARCH=amd64 alpine /tmp/build.sh
 # docker run --rm -v $(pwd):/tmp -w /tmp -e ARCH=aarch64 multiarch/alpine:aarch64-latest-stable /tmp/build.sh
