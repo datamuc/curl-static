@@ -1,0 +1,20 @@
+on:
+  workflow_dispatch: {}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container:
+      image: alpine:latest
+      volumes:
+    steps:
+    - name: compiling
+      run: |
+        sh build.sh
+    - uses: actions/upload-artifact@v3
+      name: save build
+      with:
+        name: curl-static
+        path: release
+
+
