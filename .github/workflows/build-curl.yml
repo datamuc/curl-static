@@ -6,8 +6,9 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: alpine:latest
-      volumes:
     steps:
+    - name: get code
+      uses: actions/checkout@v3
     - name: compiling
       run: |
         sh build.sh
