@@ -2,7 +2,7 @@ on:
   workflow_dispatch: {}
 
 jobs:
-  build:
+  build-openssl:
     runs-on: ubuntu-latest
     container:
       image: alpine:latest
@@ -17,7 +17,24 @@ jobs:
     - uses: actions/upload-artifact@v3
       name: save build
       with:
-        name: curl-static
+        name: curl-static-openssl
+        path: /tmp/release
+  build-mbedtls:
+    runs-on: ubuntu-latest
+    container:
+      image: alpine:latest
+      env:
+        ARCH: amd64
+    steps:
+    - name: get code
+      uses: actions/checkout@v3
+    - name: compiling
+      run: |
+        sh build-mbedtls.sh
+    - uses: actions/upload-artifact@v3
+      name: save build
+      with:
+        name: curl-static-mbedtls
         path: /tmp/release
 
 
