@@ -30,7 +30,7 @@ tar xzf curl-${CURL_VERSION}.tar.gz
 cd curl-${CURL_VERSION}/
 
 # dependencies to build curl
-apk add build-base clang openssl-dev nghttp2-dev nghttp2-static libssh2-dev libssh2-static libpsl-dev
+apk add build-base clang openssl-dev nghttp2-dev nghttp2-static libssh2-dev libssh2-static libpsl-dev libpsl-static
 
 # these are missing on at least armhf
 apk add openssl-libs-static zlib-static || true
