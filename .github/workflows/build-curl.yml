@@ -14,7 +14,7 @@ jobs:
     - name: compiling
       run: |
         sh build.sh
-    - uses: actions/upload-artifact@v3
+    - uses: actions/upload-artifact@v4
       name: save build
       with:
         name: curl-static-openssl
@@ -31,7 +31,7 @@ jobs:
     - name: compiling
       run: |
         sh build-mbedtls.sh
-    - uses: actions/upload-artifact@v3
+    - uses: actions/upload-artifact@v4
       name: save build
       with:
         name: curl-static-mbedtls
